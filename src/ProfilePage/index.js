@@ -1,30 +1,54 @@
 import React from 'react';
-import { StyleSheet, Text, SafeAreaView, Image, Button } from 'react-native';
+import { StyleSheet, Text, SafeAreaView, Image, Pressable, View } from 'react-native';
+
 
 const ProfilePage = () => {
 
     return (
-        <SafeAreaView style={[styles.container, styles.button]}>
+        <SafeAreaView style={styles.container}>
             
         <Text>hi from ProfilePage</Text>
-            <Button style={styles.button} color='#99182e' title='Active Listing' onPress={console.log}/>
-            <Button style={styles.button} color='#99182e' title='Reviews and Ratings' onPress={console.log}/>
-            <Button style={styles.button} color='#99182e' title='Purchased Items' onPress={console.log}/>
-            <Button style={styles.button} color='#99182e' title='Sold Items'onPress={console.log}/>               
+        <Image source={require('../../assets/blank_pfp.png')}/>
+        <View style={styles.space}/>
+            <Pressable style={styles.button} onPress={console.log}>
+                <Text style={styles.text}>Active Listings</Text>
+            </Pressable>
+        <View style={styles.space}/>
+            <Pressable style={styles.button}>
+                <Text style={styles.text}>Reviews and Ratings</Text>
+            </Pressable>
+        <View style={styles.space}/>
+        <Pressable style={styles.button}>
+                <Text style={styles.text}>Purchases Items</Text>
+        </Pressable>
+        <View style={styles.space}/>
+        <Pressable style={styles.button}>
+                <Text style={styles.text}>Sold Items</Text>
+            </Pressable>
         </SafeAreaView>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
-      flex: 1,
+      flex: .5,
       backgroundColor: '#fff',
       alignItems: 'center',
       justifyContent: 'center',
     },
     button: {
-        marginBottom: 20,
-        padding: 30,
+        alignItems: 'center',
+        padding:10,
+        backgroundColor: '#99182e',
+        borderRadius: 4,
+        paddingVertical:12,
+    },
+    text:{
+        color: 'white',
+    },
+    space:{
+        width:20,
+        height:20
     }
   });
 
